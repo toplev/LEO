@@ -3,7 +3,7 @@ const ACCESS_KEY = "";
 const _retrieveWeatherForecastMockedData = () =>
   fetch("/data/weather-api-mocked-dat.json")
     .then((res) => res.json())
-    .catch((err) => console.log("Oh no", err));
+    .catch((err) => {});
 
 const _retrieveWeatherForecastApiData = (coordinates) =>
   fetch(
