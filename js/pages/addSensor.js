@@ -17,7 +17,7 @@ const handleGeolocation = () => {
   };
 
   if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(onError, onSuccess);
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }
 };
 
