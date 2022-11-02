@@ -1,7 +1,7 @@
 const ACCESS_KEY = "";
 
 const _retrieveWeatherForecastMockedData = () =>
-  fetch("/data/weather-api-mocked-dat.json")
+  fetch("/data/weather-api-mocked-data.json")
     .then((res) => res.json())
     .catch((err) => {});
 
