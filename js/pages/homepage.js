@@ -101,7 +101,7 @@ $dropdownForm.addEventListener("change", function (e) {
   console.log(e.target.value);
 });
 
-const main = () => {
+const main = async () => {
   const sensorsData = await retrieveSensorsData();
 
   createPagination(sensorsData.length);
