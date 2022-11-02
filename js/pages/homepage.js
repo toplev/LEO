@@ -102,9 +102,10 @@ $dropdownForm.addEventListener("change", function (e) {
 });
 
 const main = async () => {
+  console.log(data);
   const sensorsData = await retrieveSensorsData();
 
-  createPagination(sensorsData.id);
+  createPagination(sensorsData.length);
 
   const offset = calculateOffset();
 
