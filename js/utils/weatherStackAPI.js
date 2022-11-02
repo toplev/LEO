@@ -7,7 +7,7 @@ const _retrieveWeatherForecastMockedData = () =>
 
 const _retrieveWeatherForecastApiData = (coordinates) =>
   fetch(
-    `http://api.weatherstack.com/current?access_key=${ACCESS_KEY}&query=${coordinates.lat},${coordinates.lon}`
+    `http://api.weatherstack.com/current?access_key=${ACCESS_KEY}&query=${coordinates.lat},${coordinates.lng}`
   )
     .then((res) => res.json())
     .catch((err) => console.log("Oh no", err));
