@@ -70,7 +70,7 @@ const main = async () => {
 
   const weatherForecastData = await retrieveWeatherForecastData(
     sensorData.coordinates,
-    false
+    true
   );
 
   fillSensorTable(sensorData);
