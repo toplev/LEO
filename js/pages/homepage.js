@@ -102,7 +102,6 @@ $dropdownForm.addEventListener("change", function (e) {
 });
 
 const main = async () => {
-  console.log(facades);
   const sensorsData = await retrieveSensorsData();
 
   createPagination(sensorsData.length);
@@ -116,4 +115,4 @@ const main = async () => {
   }
 };
 
-main();
+main(data);
