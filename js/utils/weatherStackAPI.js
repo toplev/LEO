@@ -12,7 +12,7 @@ const _retrieveWeatherForecastApiData = (coordinates) =>
     .then((res) => res.json())
     .catch((err) => console.log("Oh no", err));
 
-const _retrieveWeatherForecastData = async (coordinates, isMocked) => {
+const retrieveWeatherForecastData = async (coordinates, isMocked) => {
   if (isMocked) {
     return await _retrieveWeatherForecastMockedData();
   }
