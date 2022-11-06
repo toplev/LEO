@@ -31,6 +31,7 @@ const retrieveSensorData = () =>
     .catch((err) => console.log("Oh no", err));
 
 const fillSensorTable = (sensorData) => {
+  console.log(data);
   $sensorId.textContent = sensorData.id;
   $sensorBrand.textContent = sensorData.marque;
   $sensorStatus.textContent = sensorData.isActive ? "Actif" : "Inactif";
