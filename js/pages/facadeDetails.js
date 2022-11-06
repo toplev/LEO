@@ -24,15 +24,11 @@ const $weatherCloudcover = document.querySelector(".weather-cloudcover");
 const $weatherUVIndex = document.querySelector(".weather-uv-index");
 const $weatherIsDay = document.querySelector(".weather-is-day");
 
-const retrieveSensorData = () =>
+const retrieveSensorData = (data) =>
   fetch("/data/facade-detail-data.json")
     .then((res) => res.json())
-    .then(res => {
-        this.setState({
-          data: res,
-          error: res.error || null,
-          loading: false
-        });
+    .then((data) => data.facade)
+    .catch((err) => console.log("Oh no", err));
 
 const fillSensorTable = (sensorData) => {
   $sensorId.textContent = sensorData.id;
@@ -94,4 +90,4 @@ const main = () => {
   fillWeatherForecastTable(weatherForecastData);
 };
 
-main ();
+main();
