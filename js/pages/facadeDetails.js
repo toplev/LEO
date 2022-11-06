@@ -27,11 +27,14 @@ const $weatherIsDay = document.querySelector(".weather-is-day");
 const retrieveSensorData = () =>
   fetch("/data/facade-detail-data.json")
     .then((res) => res.json())
-    .then((data) => data.facade)
-    .catch((err) => console.log("Oh no", err));
+    .then(res => {
+        this.setState({
+          data: res,
+          error: res.error || null,
+          loading: false
+        });
 
 const fillSensorTable = (sensorData) => {
-  console.log(data);
   $sensorId.textContent = sensorData.id;
   $sensorBrand.textContent = sensorData.marque;
   $sensorStatus.textContent = sensorData.isActive ? "Actif" : "Inactif";
@@ -91,4 +94,4 @@ const main = () => {
   fillWeatherForecastTable(weatherForecastData);
 };
 
-main();
+main ();
