@@ -76,12 +76,12 @@ const handleSensorImagesGallery = (sensorData) => {
   $sensorMainImg.setAttribute("src", `/assets/${sensorData.medias[0]}`);
 };
 
-const main = () => {
-  const sensorData = retrieveSensorData();
+const main = async () => {
+  const sensorData = await retrieveSensorData();
 
-  const weatherForecastData = retrieveWeatherForecastData(
+  const weatherForecastData = await retrieveWeatherForecastData(
     sensorData.coordinates,
-    true
+    false
   );
 
   fillSensorTable(sensorData);
